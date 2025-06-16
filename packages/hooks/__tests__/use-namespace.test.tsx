@@ -100,7 +100,7 @@ describe('use-namespace', () => {
       {
         global: {
           provide: {
-            namespace: 'el',
+            namespace: 'sl',
           },
         },
       }

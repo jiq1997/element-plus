@@ -59,7 +59,7 @@ const _mount = (template: string, data: any = () => ({}), otherObj?) =>
       attachTo: 'body',
       global: {
         provide: {
-          namespace: 'el',
+          namespace: 'sl',
         },
       },
     }

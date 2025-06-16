@@ -39,7 +39,7 @@ Create `styles/element/index.scss`:
 
 ```scss
 // styles/element/index.scss
-// we can add this to custom namespace, default is 'el'
+// we can add this to custom namespace, default is 'sl'
 @forward 'element-plus/theme-chalk/src/mixins/config.scss' with (
   $namespace: 'ep'
 );

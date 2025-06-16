@@ -76,7 +76,7 @@ const _mount = (
     {
       global: {
         provide: {
-          namespace: 'el',
+          namespace: 'sl',
         },
       },
     }
