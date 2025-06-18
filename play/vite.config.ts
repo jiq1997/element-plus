@@ -3,7 +3,7 @@ import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import Components from 'unplugin-vue-components/vite'
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import { ElementPlusResolver } from './plugins/ElementPlusResolver'
 import Inspect from 'vite-plugin-inspect'
 import mkcert from 'vite-plugin-mkcert'
 import glob from 'fast-glob'
@@ -18,6 +18,10 @@ import {
 } from '@element-plus/build-utils'
 import type { Plugin } from 'vite'
 import './vite.init'
+
+console.log('%c!<----start ---->', 'color:mediumspringgreen')
+console.log(__dirname)
+console.log('%c!<---- end ---->', 'color:mediumspringgreen')
 
 const esbuildPlugin = (): Plugin => ({
   ...esbuild({
@@ -50,11 +54,11 @@ export default defineConfig(async ({ mode }) => {
     resolve: {
       alias: [
         {
-          find: /^element-plus(\/(es|lib))?$/,
+          find: /^sl-design(\/(es|lib))?$/,
           replacement: path.resolve(epRoot, 'index.ts'),
         },
         {
-          find: /^element-plus\/(es|lib)\/(.*)$/,
+          find: /^sl-design\/(es|lib)\/(.*)$/,
           replacement: `${pkgRoot}/$2`,
         },
       ],
