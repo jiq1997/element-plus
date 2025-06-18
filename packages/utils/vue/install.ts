@@ -9,10 +9,10 @@ export const withInstall = <T, E extends Record<string, any>>(
 ) => {
   ;(main as SFCWithInstall<T>).install = (app): void => {
     for (const comp of [main, ...Object.values(extra ?? {})]) {
-      if(comp.name && comp.name.startsWith("El")){
+      if (comp.name && comp.name.startsWith('El')) {
         const name = comp.name.replace(/^El/, 'Sl')
         app.component(name, comp)
-      }else{
+      } else {
         app.component(comp.name, comp)
       }
     }
@@ -20,7 +20,7 @@ export const withInstall = <T, E extends Record<string, any>>(
 
   if (extra) {
     for (const [key, comp] of Object.entries(extra)) {
-      if(key && key.startsWith("El")){
+      if (key && key.startsWith('El')) {
         const name = key.replace(/^El/, 'Sl')
         ;(main as any)[name] = comp
       }
